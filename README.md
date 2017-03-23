@@ -2,7 +2,7 @@
 [![Build Status](http://img.shields.io/travis/Khezen/kraken-go-api-client.svg?style=flat-square)](https://travis-ci.org/Khezen/kraken-go-api-client) [![codecov](https://img.shields.io/codecov/c/github/Khezen/kraken-go-api-client/master.svg?style=flat-square)](https://codecov.io/gh/Khezen/kraken-go-api-client)
 [![Go Report Card](https://goreportcard.com/badge/github.com/khezen/kraken-go-api-client?style=flat-square)](https://goreportcard.com/report/github.com/khezen/kraken-go-api-client)
 
-# Kraken GO API Client
+# Kraken Go API Client
 
 A simple API Client for the [Kraken](https://www.kraken.com/ "Kraken") Trading platform.
 
