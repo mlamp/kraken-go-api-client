@@ -62,43 +62,43 @@ type AssetPairsResponse struct {
 // Get return the given asset pair info
 func (pairs AssetPairsResponse) Get(pair string) *AssetPairInfo {
 	switch pair {
-	case "XETHXXBT":
+	case XETHXXBT:
 		return &pairs.XETHXXBT
-	case "XETHZCAD":
+	case XETHZCAD:
 		return &pairs.XETHZCAD
-	case "XETHZEUR":
+	case XETHZEUR:
 		return &pairs.XETHZEUR
-	case "XETHZGBP":
+	case XETHZGBP:
 		return &pairs.XETHZGBP
-	case "XETHZJPY":
+	case XETHZJPY:
 		return &pairs.XETHZJPY
-	case "XETHZUSD":
+	case XETHZUSD:
 		return &pairs.XETHZUSD
-	case "XLTCZCAD":
+	case XLTCZCAD:
 		return &pairs.XLTCZCAD
-	case "XLTCZEUR":
+	case XLTCZEUR:
 		return &pairs.XLTCZEUR
-	case "XLTCZUSD":
+	case XLTCZUSD:
 		return &pairs.XLTCZUSD
-	case "XXBTXLTC":
+	case XXBTXLTC:
 		return &pairs.XXBTXLTC
-	case "XXBTXNMC":
+	case XXBTXNMC:
 		return &pairs.XXBTXNMC
-	case "XXBTXXDG":
+	case XXBTXXDG:
 		return &pairs.XXBTXXDG
-	case "XXBTXXLM":
+	case XXBTXXLM:
 		return &pairs.XXBTXXLM
-	case "XXBTXXRP":
+	case XXBTXXRP:
 		return &pairs.XXBTXXRP
-	case "XXBTZCAD":
+	case XXBTZCAD:
 		return &pairs.XXBTZCAD
-	case "XXBTZEUR":
+	case XXBTZEUR:
 		return &pairs.XXBTZEUR
-	case "XXBTZGBP":
+	case XXBTZGBP:
 		return &pairs.XXBTZGBP
-	case "XXBTZJPY":
+	case XXBTZJPY:
 		return &pairs.XXBTZJPY
-	case "XXBTZUSD":
+	case XXBTZUSD:
 		return &pairs.XXBTZUSD
 	default:
 		return nil
@@ -198,43 +198,43 @@ type TickerResponse struct {
 // Get returns the given pair ticker info
 func (pairs TickerResponse) Get(pair string) *PairTickerInfo {
 	switch pair {
-	case "XETHXXBT":
+	case XETHXXBT:
 		return &pairs.XETHXXBT
-	case "XETHZCAD":
+	case XETHZCAD:
 		return &pairs.XETHZCAD
-	case "XETHZEUR":
+	case XETHZEUR:
 		return &pairs.XETHZEUR
-	case "XETHZGBP":
+	case XETHZGBP:
 		return &pairs.XETHZGBP
-	case "XETHZJPY":
+	case XETHZJPY:
 		return &pairs.XETHZJPY
-	case "XETHZUSD":
+	case XETHZUSD:
 		return &pairs.XETHZUSD
-	case "XLTCZCAD":
+	case XLTCZCAD:
 		return &pairs.XLTCZCAD
-	case "XLTCZEUR":
+	case XLTCZEUR:
 		return &pairs.XLTCZEUR
-	case "XLTCZUSD":
+	case XLTCZUSD:
 		return &pairs.XLTCZUSD
-	case "XXBTXLTC":
+	case XXBTXLTC:
 		return &pairs.XXBTXLTC
-	case "XXBTXNMC":
+	case XXBTXNMC:
 		return &pairs.XXBTXNMC
-	case "XXBTXXDG":
+	case XXBTXXDG:
 		return &pairs.XXBTXXDG
-	case "XXBTXXLM":
+	case XXBTXXLM:
 		return &pairs.XXBTXXLM
-	case "XXBTXXRP":
+	case XXBTXXRP:
 		return &pairs.XXBTXXRP
-	case "XXBTZCAD":
+	case XXBTZCAD:
 		return &pairs.XXBTZCAD
-	case "XXBTZEUR":
+	case XXBTZEUR:
 		return &pairs.XXBTZEUR
-	case "XXBTZGBP":
+	case XXBTZGBP:
 		return &pairs.XXBTZGBP
-	case "XXBTZJPY":
+	case XXBTZJPY:
 		return &pairs.XXBTZJPY
-	case "XXBTZUSD":
+	case XXBTZUSD:
 		return &pairs.XXBTZUSD
 	default:
 		return nil
