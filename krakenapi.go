@@ -1,4 +1,4 @@
-package krakenapi
+package KrakenAPI
 
 import (
 	"crypto/hmac"
@@ -51,22 +51,22 @@ var privateMethods = []string{
 	"CancelOrder",
 }
 
-// KrakenApi represents a Kraken API Client connection
-type KrakenApi struct {
+// KrakenAPI represents a Kraken API Client connection
+type KrakenAPI struct {
 	key    string
 	secret string
 	client *http.Client
 }
 
 // New creates a new Kraken API client
-func New(key, secret string) *KrakenApi {
+func New(key, secret string) *KrakenAPI {
 	client := &http.Client{}
 
-	return &KrakenApi{key, secret, client}
+	return &KrakenAPI{key, secret, client}
 }
 
 // Time returns the server's time
-func (api *KrakenApi) Time() (*TimeResponse, error) {
+func (api *KrakenAPI) Time() (*TimeResponse, error) {
 	resp, err := api.queryPublic("Time", nil, &TimeResponse{})
 	if err != nil {
 		return nil, err
@@ -76,7 +76,7 @@ func (api *KrakenApi) Time() (*TimeResponse, error) {
 }
 
 // Assets returns the servers available assets
-func (api *KrakenApi) Assets() (*AssetsResponse, error) {
+func (api *KrakenAPI) Assets() (*AssetsResponse, error) {
 	resp, err := api.queryPublic("Assets", nil, &AssetsResponse{})
 	if err != nil {
 		return nil, err
@@ -86,7 +86,7 @@ func (api *KrakenApi) Assets() (*AssetsResponse, error) {
 }
 
 // AssetPairs returns the servers available asset pairs
-func (api *KrakenApi) AssetPairs() (*AssetPairsResponse, error) {
+func (api *KrakenAPI) AssetPairs() (*AssetPairsResponse, error) {
 	resp, err := api.queryPublic("AssetPairs", nil, &AssetPairsResponse{})
 	if err != nil {
 		return nil, err
@@ -96,7 +96,7 @@ func (api *KrakenApi) AssetPairs() (*AssetPairsResponse, error) {
 }
 
 // Ticker returns the ticker for given comma seperated pais
-func (api *KrakenApi) Ticker(pairs ...string) (*TickerResponse, error) {
+func (api *KrakenAPI) Ticker(pairs ...string) (*TickerResponse, error) {
 	resp, err := api.queryPublic("Ticker", url.Values{
 		"pair": {strings.Join(pairs, ",")},
 	}, &TickerResponse{})
@@ -108,7 +108,7 @@ func (api *KrakenApi) Ticker(pairs ...string) (*TickerResponse, error) {
 }
 
 // Query sends a query to Kraken api for given method and parameters
-func (api *KrakenApi) Query(method string, data map[string]string) (interface{}, error) {
+func (api *KrakenAPI) Query(method string, data map[string]string) (interface{}, error) {
 	values := url.Values{}
 	for key, value := range data {
 		values.Set(key, value)
@@ -125,7 +125,7 @@ func (api *KrakenApi) Query(method string, data map[string]string) (interface{},
 }
 
 // Execute a public method query
-func (api *KrakenApi) queryPublic(method string, values url.Values, typ interface{}) (interface{}, error) {
+func (api *KrakenAPI) queryPublic(method string, values url.Values, typ interface{}) (interface{}, error) {
 	url := fmt.Sprintf("%s/%s/public/%s", APIURL, APIVersion, method)
 	resp, err := api.doRequest(url, values, nil, typ)
 
@@ -133,7 +133,7 @@ func (api *KrakenApi) queryPublic(method string, values url.Values, typ interfac
 }
 
 // queryPrivate executes a private method query
-func (api *KrakenApi) queryPrivate(method string, values url.Values, typ interface{}) (interface{}, error) {
+func (api *KrakenAPI) queryPrivate(method string, values url.Values, typ interface{}) (interface{}, error) {
 	urlPath := fmt.Sprintf("/%s/private/%s", APIVersion, method)
 	reqURL := fmt.Sprintf("%s%s", APIURL, urlPath)
 	secret, _ := base64.StdEncoding.DecodeString(api.secret)
@@ -154,7 +154,7 @@ func (api *KrakenApi) queryPrivate(method string, values url.Values, typ interfa
 }
 
 // doRequest executes a HTTP Request to the Kraken API and returns the result
-func (api *KrakenApi) doRequest(reqURL string, values url.Values, headers map[string]string, typ interface{}) (interface{}, error) {
+func (api *KrakenAPI) doRequest(reqURL string, values url.Values, headers map[string]string, typ interface{}) (interface{}, error) {
 
 	// Create request
 	req, err := http.NewRequest("POST", reqURL, strings.NewReader(values.Encode()))

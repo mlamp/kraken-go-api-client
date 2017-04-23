@@ -1,4 +1,4 @@
-package krakenapi
+package KrakenAPI
 
 import (
 	"encoding/base64"

@@ -1,4 +1,4 @@
-package krakenapi
+package KrakenAPI
 
 const (
 	XETHXXBT = "XETHXXBT"

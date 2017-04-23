@@ -19,7 +19,7 @@ import (
 )
 
 func main() {
-	api := krakenapi.New("KEY", "SECRET")
+	api := KrakenAPI.New("KEY", "SECRET")
 	result, err := api.Query("Ticker", map[string]string{
 		"pair": "XXBTZEUR",
 	})
@@ -31,7 +31,7 @@ func main() {
 	fmt.Printf("Result: %+v\n", result)
 
 	// There also some strongly typed methods available
-	ticker, err := api.Ticker(krakenapi.XXBTZEUR)
+	ticker, err := api.Ticker(KrakenAPI.XXBTZEUR)
 	if err != nil {
 		log.Fatal(err)
 	}
