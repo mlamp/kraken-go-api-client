@@ -149,6 +149,51 @@ type TickerResponse struct {
 	XXBTZUSD PairTickerInfo
 }
 
+func (pairs TickerResponse) get(pair string) *PairTickerInfo {
+	switch pair {
+	case "XETHXXBT":
+		return &pairs.XETHXXBT
+	case "XETHZCAD":
+		return &pairs.XETHZCAD
+	case "XETHZEUR":
+		return &pairs.XETHZEUR
+	case "XETHZGBP":
+		return &pairs.XETHZGBP
+	case "XETHZJPY":
+		return &pairs.XETHZJPY
+	case "XETHZUSD":
+		return &pairs.XETHZUSD
+	case "XLTCZCAD":
+		return &pairs.XLTCZCAD
+	case "XLTCZEUR":
+		return &pairs.XLTCZEUR
+	case "XLTCZUSD":
+		return &pairs.XLTCZUSD
+	case "XXBTXLTC":
+		return &pairs.XXBTXLTC
+	case "XXBTXNMC":
+		return &pairs.XXBTXNMC
+	case "XXBTXXDG":
+		return &pairs.XXBTXXDG
+	case "XXBTXXLM":
+		return &pairs.XXBTXXLM
+	case "XXBTXXRP":
+		return &pairs.XXBTXXRP
+	case "XXBTZCAD":
+		return &pairs.XXBTZCAD
+	case "XXBTZEUR":
+		return &pairs.XXBTZEUR
+	case "XXBTZGBP":
+		return &pairs.XXBTZGBP
+	case "XXBTZJPY":
+		return &pairs.XXBTZJPY
+	case "XXBTZUSD":
+		return &pairs.XXBTZUSD
+	default:
+		return nil
+	}
+}
+
 // PairTickerInfo represents ticker information for a pair
 type PairTickerInfo struct {
 	// Ask array(<price>, <whole lot volume>, <lot volume>)
