@@ -149,7 +149,8 @@ type TickerResponse struct {
 	XXBTZUSD PairTickerInfo
 }
 
-func (pairs TickerResponse) get(pair string) *PairTickerInfo {
+// Get returns the given pair ticker info
+func (pairs TickerResponse) Get(pair string) *PairTickerInfo {
 	switch pair {
 	case "XETHXXBT":
 		return &pairs.XETHXXBT
